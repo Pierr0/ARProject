@@ -32,4 +32,8 @@ public class RessourceScript : MonoBehaviour {
     {
         this.gameObject.SetActive(statusRessource);
     }
+
+    public int getIdTypeRessources(){
+        return idTypeRessources;
+    }
 }

@@ -19,7 +19,7 @@ public class ResourcesSpawnScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        ClockRespawn();
 	}
 
     private void ClockRespawn()
@@ -38,6 +38,7 @@ public class ResourcesSpawnScript : MonoBehaviour {
         int index = Random.Range(0, RessourceSpawnable.Count);
         RessourceSpawnable[index].setStatusRessource(true);
         RessourceSpawnable[index].refreshStatus();
+        Debug.Log("random ressource : " + RessourceSpawnable[index].getIdTypeRessources());
     }
 
     private void ResetRessources()
