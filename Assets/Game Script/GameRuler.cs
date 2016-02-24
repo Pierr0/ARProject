@@ -14,4 +14,9 @@ public class GameRuler : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void gameStart()
+    {
+
+    }
 }
