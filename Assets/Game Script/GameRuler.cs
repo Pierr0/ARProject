@@ -28,7 +28,7 @@ public class GameRuler : MonoBehaviour {
     {
         golem.setEnable();
         demon.setEnable();
-        //startButton.setEnable();
+        startButton.SetActive(false);
     }
 
     public void endGame()

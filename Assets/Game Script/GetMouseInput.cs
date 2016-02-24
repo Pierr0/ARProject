@@ -1,7 +1,11 @@
 using UnityEngine;
 
 public class GetMouseInput : MonoBehaviour
-{                        
+{
+
+    [SerializeField]
+    private GameRuler gameruler;
+
     void Update()
     {
         // Méthode 1: utiliser le collider
@@ -18,6 +22,16 @@ public class GetMouseInput : MonoBehaviour
                 if (hitInfo.collider.gameObject.tag == ("ObjectTag"))
                 {
                     // Do something
+                }
+                if (hitInfo.collider.gameObject.tag == ("Demon"))
+                {
+                    // Do something
+
+                }
+                if (hitInfo.collider.gameObject.tag == ("Golem"))
+                {
+                    // Do something
+
                 }
             }
         }

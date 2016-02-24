@@ -8,6 +8,8 @@ TagManager:
   - Character
   - Glove
   - Target
+  - Golem
+  - Demon
   layers:
   - Default
   - TransparentFX
