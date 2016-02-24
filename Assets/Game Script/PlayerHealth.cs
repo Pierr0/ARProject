@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField]
+    private GameRuler gameruler;
+
     public float m_StartingHealth = 100f;               // The amount of health each player starts with.
     public Slider m_Slider;                             // The slider to represent how much health the player currently has.
     public Image m_FillImage;                           // The image component of the slider.
@@ -12,7 +15,7 @@ public class PlayerHealth : MonoBehaviour
     private float m_CurrentHealth;                      // How much health the player currently has.
     private bool m_Dead;                                // Has the player been reduced beyond zero health yet?
 
-    private void OnEnable()
+    public void setEnable()
     {
         // When the player is enabled, reset the player's health and whether or not it's dead.
         m_CurrentHealth = m_StartingHealth;
@@ -53,5 +56,10 @@ public class PlayerHealth : MonoBehaviour
 
         // Turn the player off.
         gameObject.SetActive(false);
+    }
+
+    public bool getDeath()
+    {
+        return m_Dead;
     }
 }
