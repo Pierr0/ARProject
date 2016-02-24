@@ -7,17 +7,13 @@ public class ResourcesSpawnScript : MonoBehaviour
     public List<GameObject> RessourceSpawnable;
 
     public float timeToRespawn = 3.0f;
-
-    private float timerRespawn = 0.0f;
-    private int layer_foreground = 10;
-    private int layer_background = 8;
-    static private GameObject instance;
+    private float timerRespawn = 0.0f;   
 
     // Use this for initialization
     void Start()
     {
-        //ResetRessources();
-        //RandomRessources();
+        ResetRessources();
+        RandomRessources();
     }
 
     // Update is called once per frame
@@ -28,19 +24,12 @@ public class ResourcesSpawnScript : MonoBehaviour
 
     private void ClockRespawn()
     {
+        //GameObject temp;
         timerRespawn += Time.deltaTime;
         if (timerRespawn > timeToRespawn)
         {
-            //ResetRessources();
-            //RandomRessources();
-            int index = Random.Range(0, RessourceSpawnable.Count);
-            if (instance != null)
-            {
-                Destroy(instance);
-            }
-            // Créer l'objet
-            instance = Instantiate(RessourceSpawnable[index], transform.position, transform.rotation) as GameObject;
-            instance.transform.parent = transform;
+            ResetRessources();
+            RandomRessources();
             timerRespawn = 0.0f;
         }
     }
@@ -48,18 +37,18 @@ public class ResourcesSpawnScript : MonoBehaviour
     private void ResetRessources()
     {
         for (int i = 0; i < RessourceSpawnable.Count; i++)
-            ChangeMarkerLayer(RessourceSpawnable[i], false);
+            ChangeObjectLocation(RessourceSpawnable[i], false);
     }
 
     private void RandomRessources()
     {
         int index = Random.Range(0, RessourceSpawnable.Count);
-        ChangeMarkerLayer(RessourceSpawnable[index], true);
-        Debug.Log("random ressource affiché : " + index);
+        ChangeObjectLocation(RessourceSpawnable[index], true);        
     }
 
-    private void ChangeMarkerLayer(GameObject obj, bool status)
-    {
-            obj.layer = status ? layer_foreground : layer_background;
+    private void ChangeObjectLocation(GameObject obj, bool status)
+    {        
+        Vector3 newPos = -100*Vector3.one;
+        obj.transform.position = status ? transform.position : newPos;        
     }
 }
