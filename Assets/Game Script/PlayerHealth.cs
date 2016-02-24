@@ -4,12 +4,14 @@ using System.Collections.Generic;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public enum Elements { FIRE = 0, EARTH, WATER };
+
     [SerializeField]
     private GameRuler gameruler;
 
-    private List<int> shields;
+    private List<Elements> shields;
 
-    private int elementInfused;
+    private Elements elementInfused;
 
     public float m_StartingHealth = 100f;               // The amount of health each player starts with.
     public Slider m_Slider;                             // The slider to represent how much health the player currently has.
@@ -20,11 +22,11 @@ public class PlayerHealth : MonoBehaviour
     private float m_CurrentHealth;                      // How much health the player currently has.
     private bool m_Dead;                                // Has the player been reduced beyond zero health yet?
 
-    public int getElementInfused()
+    public Elements getElementInfused()
     {
         return elementInfused;
     }
-
+    
     public void setEnable()
     {
         // When the player is enabled, reset the player's health and whether or not it's dead.
@@ -35,7 +37,7 @@ public class PlayerHealth : MonoBehaviour
         //SetHealthUI();
     }
     
-    public void TakeDamage(float amount)
+    public void TakeDamage(int amount)
     {
         // Reduce current health by the amount of damage done.
         m_CurrentHealth -= amount;
@@ -50,7 +52,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void damageGolem( int typeDamage)
+    public void damageGolem(Elements typeDamage)
     {
         if (shields.Count > 0)
         {
@@ -67,7 +69,7 @@ public class PlayerHealth : MonoBehaviour
         
     }
 
-    public void damageDemon(int typeDamage)
+    public void damageDemon(Elements typeDamage)
     {
         if (typeDamage == elementWheel(elementInfused))
         {
@@ -75,7 +77,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void addShield(int typeShield)
+    public void addShield(Elements typeShield)
     {
         if (shields.Count < 3)
         {
@@ -110,20 +112,20 @@ public class PlayerHealth : MonoBehaviour
         return m_Dead;
     }
 
-    public int elementWheel(int elementId)
+    public Elements elementWheel(Elements elementId)
     {
         //1 = earth > 2 = water > 3= Fire > earth
-        if (elementId == 1)
+        if (elementId == Elements.EARTH)
         {
-            return 3;
+            return Elements.FIRE;
         }
-        else if (elementId == 2)
+        else if (elementId == Elements.WATER)
         {
-            return 1;
+            return Elements.EARTH;
         }
-        else if (elementId == 3) 
+        else if (elementId == Elements.FIRE) 
         {
-            return 2;
+            return Elements.WATER;
         }
         return 0;
     }
