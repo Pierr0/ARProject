@@ -19,6 +19,8 @@ public class GameRuler : MonoBehaviour {
 
     private float timerAttacks = 0.0f;
 
+    private bool clockActive = false;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -26,7 +28,8 @@ public class GameRuler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if (clockActive)
+            ClockAttacks();
 	}
 
     public void gameStart()
@@ -34,20 +37,23 @@ public class GameRuler : MonoBehaviour {
         golem.setEnable();
         demon.setEnable();
         startButton.SetActive(false);
+        clockActive = true;
     }
 
-    private void ClockRespawn()
+    private void ClockAttacks()
     {
         timerAttacks += Time.deltaTime;
         if (timerAttacks > timeBetweenAttacks)
         {
             golem.damageGolem(demon.getElementInfused());
+            Debug.Log("hit");
             timerAttacks = 0.0f;
         }
     }
 
     public void endGame()
     {
+        clockActive = false;
         if (golem.getDeath() == true)
         {
             //Lose

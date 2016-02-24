@@ -9,7 +9,11 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private GameRuler gameruler;
 
+<<<<<<< HEAD
+    private List<int> shields = new List<int>();
+=======
     private List<Elements> shields;
+>>>>>>> origin/master
 
     private Elements elementInfused;
 
@@ -43,7 +47,7 @@ public class PlayerHealth : MonoBehaviour
         m_CurrentHealth -= amount;
 
         // Change the UI elements appropriately.
-        SetHealthUI();
+        //SetHealthUI();
 
         // If the current health is at or below zero and it has not yet been registered, call OnDeath.
         if (m_CurrentHealth <= 0f && !m_Dead)
