@@ -3,20 +3,9 @@ using System.Collections;
 
 public class RessourceScript : MonoBehaviour {
 
+    public int idTypeRessources;
+
     private bool statusRessource;
-
-    [SerializeField]
-    private int idTypeRessources;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     public bool getStatusRessource()
     {
@@ -36,4 +25,17 @@ public class RessourceScript : MonoBehaviour {
     public int getIdTypeRessources(){
         return idTypeRessources;
     }
+
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
 }

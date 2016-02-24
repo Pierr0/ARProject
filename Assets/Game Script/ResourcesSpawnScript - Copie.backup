@@ -11,18 +11,17 @@ public class ResourcesSpawnScript : MonoBehaviour
     private float timerRespawn = 0.0f;
     private int layer_foreground = 10;
     private int layer_background = 8;
-    static private GameObject instance;
 
     // Use this for initialization
     void Start()
     {
-        //ResetRessources();
-        //RandomRessources();
+        ResetRessources();
+        RandomRessources();
     }
 
     // Update is called once per frame
     void Update()
-    {        
+    {
         ClockRespawn();
     }
 
@@ -31,16 +30,8 @@ public class ResourcesSpawnScript : MonoBehaviour
         timerRespawn += Time.deltaTime;
         if (timerRespawn > timeToRespawn)
         {
-            //ResetRessources();
-            //RandomRessources();
-            int index = Random.Range(0, RessourceSpawnable.Count);
-            if (instance != null)
-            {
-                Destroy(instance);
-            }
-            // Créer l'objet
-            instance = Instantiate(RessourceSpawnable[index], transform.position, transform.rotation) as GameObject;
-            instance.transform.parent = transform;
+            ResetRessources();
+            RandomRessources();
             timerRespawn = 0.0f;
         }
     }
