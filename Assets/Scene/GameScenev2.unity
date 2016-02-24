@@ -1040,6 +1040,7 @@ MonoBehaviour:
   golem: {fileID: 518856149}
   demon: {fileID: 518856148}
   startButton: {fileID: 1582919778}
+  timeBetweenAttacks: 10
 --- !u!4 &1180160758 stripped
 Transform:
   m_PrefabParentObject: {fileID: 461276, guid: 8bb9af1750de769448cbcc06225bd4b4, type: 2}
