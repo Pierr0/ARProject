@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField]
     private GameRuler gameruler;
+
+    private List<int> shields;
+
+    private int elementInfused;
 
     public float m_StartingHealth = 100f;               // The amount of health each player starts with.
     public Slider m_Slider;                             // The slider to represent how much health the player currently has.
@@ -22,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
         m_Dead = false;
 
         // Update the health slider's value and color.
-        SetHealthUI();
+        //SetHealthUI();
     }
     
     public void TakeDamage(float amount)
@@ -37,6 +42,32 @@ public class PlayerHealth : MonoBehaviour
         if (m_CurrentHealth <= 0f && !m_Dead)
         {
             OnDeath();
+        }
+    }
+
+    public void damageGolem()
+    {
+        if (shields.Count > 0)
+        {
+            if(shields[0] )
+        }
+        TakeDamage(10);
+    }
+
+    public void damageDemon()
+    {
+        TakeDamage(10);
+    }
+
+    public void addShield(int typeShield)
+    {
+        if (shields.Count < 3)
+        {
+            shields.Add(typeShield);
+        }
+        else
+        {
+            shields[2] = typeShield;
         }
     }
 
@@ -61,5 +92,23 @@ public class PlayerHealth : MonoBehaviour
     public bool getDeath()
     {
         return m_Dead;
+    }
+
+    public int elementWheel(int elementId)
+    {
+        //1 = earth > 2 = water > 3= Fire > earth
+        if (elementId == 1)
+        {
+            return 3;
+        }
+        else if (elementId == 2)
+        {
+            return 1;
+        }
+        else if (elementId == 3) 
+        {
+            return 2;
+        }
+        return 0;
     }
 }
