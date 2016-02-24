@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 485080}
   - 33: {fileID: 3330780}
   - 23: {fileID: 2369404}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,8 +25,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 406212}
-  - 95: {fileID: 9513986}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ElementEarth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +42,7 @@ GameObject:
   - 4: {fileID: 476308}
   - 33: {fileID: 3396134}
   - 23: {fileID: 2335056}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +59,7 @@ GameObject:
   - 4: {fileID: 473196}
   - 33: {fileID: 3351898}
   - 23: {fileID: 2311276}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +75,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 498922}
   - 114: {fileID: 11411164}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: placeholderRessource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +92,7 @@ GameObject:
   - 4: {fileID: 480440}
   - 33: {fileID: 3384314}
   - 23: {fileID: 2394522}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +109,7 @@ GameObject:
   - 4: {fileID: 412626}
   - 33: {fileID: 3305670}
   - 23: {fileID: 2359332}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,8 +199,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 152838}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.077, z: 0}
+  m_LocalRotation: {x: -0.7071069, y: 0, z: 0, w: 0.70710677}
+  m_LocalPosition: {x: 0, y: -0, z: -0.07700001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 406212}
@@ -372,23 +371,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134644}
   m_Mesh: {fileID: 4300000, guid: 47dfda364cb924a43a43c41b2f7f010e, type: 3}
---- !u!95 &9513986
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 123852}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 47dfda364cb924a43a43c41b2f7f010e, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11411164
 MonoBehaviour:
   m_ObjectHideFlags: 1

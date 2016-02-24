@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   secondsToRemainVisible: 0
   eventReceiver: {fileID: 0}
-  _markerTag: hiro
+  _markerTag: RA
 --- !u!198 &19813666
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -9,7 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 405462}
   - 114: {fileID: 11490060}
-  m_Layer: 0
+  - 65: {fileID: 6555894}
+  m_Layer: 10
   m_Name: EarthRessource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +27,7 @@ GameObject:
   - 4: {fileID: 473388}
   - 33: {fileID: 3308816}
   - 23: {fileID: 2332522}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +44,7 @@ GameObject:
   - 4: {fileID: 412336}
   - 33: {fileID: 3384646}
   - 23: {fileID: 2375512}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,8 +59,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 442124}
-  - 95: {fileID: 9537160}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ElementEarth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - 4: {fileID: 401450}
   - 33: {fileID: 3370394}
   - 23: {fileID: 2377476}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - 4: {fileID: 404258}
   - 33: {fileID: 3342990}
   - 23: {fileID: 2396724}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - 4: {fileID: 476378}
   - 33: {fileID: 3316086}
   - 23: {fileID: 2306864}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,8 +147,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141426}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.077, z: 0}
+  m_LocalRotation: {x: -0.7071069, y: 0, z: 0, w: 0.70710677}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 442124}
@@ -173,7 +173,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 166182}
   m_LocalRotation: {x: 0.0868241, y: 0.007596125, z: -0.0868241, w: 0.9924039}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.0146, y: 0, z: -0.0145}
   m_LocalScale: {x: 0.02, y: 0.02, z: 0.019999998}
   m_Children:
   - {fileID: 401450}
@@ -372,23 +372,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156228}
   m_Mesh: {fileID: 4300004, guid: 47dfda364cb924a43a43c41b2f7f010e, type: 3}
---- !u!95 &9537160
-Animator:
-  serializedVersion: 3
+--- !u!65 &6555894
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 166182}
+  m_GameObject: {fileID: 141426}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 47dfda364cb924a43a43c41b2f7f010e, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!114 &11490060
 MonoBehaviour:
   m_ObjectHideFlags: 1
