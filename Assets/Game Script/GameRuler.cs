@@ -81,27 +81,6 @@ public class GameRuler : MonoBehaviour {
         }
     }
 
-    public void stockRessource(int element)
-    {
-        idRessourceHolded = element;
-    }
-
-    public void attack()//si on clique sur le demon
-    {
-        if (idRessourceHolded != 0)
-        {
-            //demon.damageDemon(idRessourceHolded);
-        }
-    }
-
-    public void shielding()//si on clique sur le golem
-    {
-        if (idRessourceHolded != 0)
-        {
-            //golem.addShield(idRessourceHolded);
-        }
-    }
-
     public void gameStart()
     {
         golem.setEnable();

@@ -145,7 +145,7 @@ MonoBehaviour:
   - {fileID: 1881344038}
   - {fileID: 621416971}
   - {fileID: 1775303982}
-  timeToRespawn: 3
+  timeToRespawn: 5
 --- !u!114 &218130376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2987,7 +2987,7 @@ MonoBehaviour:
   - {fileID: 1220285782}
   - {fileID: 1790962557}
   - {fileID: 1019119466}
-  timeToRespawn: 3
+  timeToRespawn: 5
 --- !u!114 &1560342011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3289,7 +3289,7 @@ MonoBehaviour:
   - {fileID: 718743043}
   - {fileID: 770638464}
   - {fileID: 1097968877}
-  timeToRespawn: 3
+  timeToRespawn: 5
 --- !u!114 &1675087635
 MonoBehaviour:
   m_ObjectHideFlags: 0
