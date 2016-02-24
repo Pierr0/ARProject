@@ -23,7 +23,7 @@ public class GameRuler : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
@@ -31,6 +31,27 @@ public class GameRuler : MonoBehaviour {
         if (clockActive)
             ClockAttacks();
 	}
+
+    public void stockRessource(int element)
+    {
+        idRessourceHolded = element;
+    }
+
+    public void attack()//si on clique sur le demon
+    {
+        if (idRessourceHolded != 0)
+        {
+            //demon.damageDemon(idRessourceHolded);
+        }
+    }
+
+    public void shielding()//si on clique sur le golem
+    {
+        if (idRessourceHolded != 0)
+        {
+            //golem.addShield(idRessourceHolded);
+        }
+    }
 
     public void gameStart()
     {

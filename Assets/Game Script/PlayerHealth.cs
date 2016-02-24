@@ -9,11 +9,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private GameRuler gameruler;
 
-<<<<<<< HEAD
-    private List<int> shields = new List<int>();
-=======
-    private List<Elements> shields;
->>>>>>> origin/master
+    private List<Elements> shields = new List<Elements>();
 
     private Elements elementInfused;
 
