@@ -20,6 +20,11 @@ public class PlayerHealth : MonoBehaviour
     private float m_CurrentHealth;                      // How much health the player currently has.
     private bool m_Dead;                                // Has the player been reduced beyond zero health yet?
 
+    public int getElementInfused()
+    {
+        return elementInfused;
+    }
+
     public void setEnable()
     {
         // When the player is enabled, reset the player's health and whether or not it's dead.
@@ -45,18 +50,29 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void damageGolem()
+    public void damageGolem( int typeDamage)
     {
         if (shields.Count > 0)
         {
-            if(shields[0] )
+            if (shields[0] != typeDamage)
+            {
+                TakeDamage(10);
+            }
+            shields.RemoveAt(0);
         }
-        TakeDamage(10);
+        else
+        {
+            TakeDamage(10);
+        }
+        
     }
 
-    public void damageDemon()
+    public void damageDemon(int typeDamage)
     {
-        TakeDamage(10);
+        if (typeDamage == elementWheel(elementInfused))
+        {
+            TakeDamage(10);
+        }
     }
 
     public void addShield(int typeShield)

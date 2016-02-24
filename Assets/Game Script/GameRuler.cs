@@ -14,6 +14,11 @@ public class GameRuler : MonoBehaviour {
     [SerializeField]
     private GameObject startButton;
 
+    [SerializeField]
+    private float timeBetweenAttacks = 10.0f;
+
+    private float timerAttacks = 0.0f;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -29,6 +34,16 @@ public class GameRuler : MonoBehaviour {
         golem.setEnable();
         demon.setEnable();
         startButton.SetActive(false);
+    }
+
+    private void ClockRespawn()
+    {
+        timerAttacks += Time.deltaTime;
+        if (timerAttacks > timeBetweenAttacks)
+        {
+            golem.damageGolem(demon.getElementInfused());
+            timerAttacks = 0.0f;
+        }
     }
 
     public void endGame()
