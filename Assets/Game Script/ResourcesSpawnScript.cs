@@ -7,8 +7,8 @@ public class ResourcesSpawnScript : MonoBehaviour
     public List<GameObject> RessourceSpawnable;
 
     public float timeToRespawn = 3.0f;
-    private float timerRespawn = 0.0f;   
-
+    private float timerRespawn = 0.0f;
+    private int currentRessourceID;
     // Use this for initialization
     void Start()
     {
@@ -22,9 +22,13 @@ public class ResourcesSpawnScript : MonoBehaviour
         ClockRespawn();
     }
 
-    private void ClockRespawn()
+    public int CurrentRessourceID()
     {
-        //GameObject temp;
+        return currentRessourceID;
+    }
+
+    private void ClockRespawn()
+    {        
         timerRespawn += Time.deltaTime;
         if (timerRespawn > timeToRespawn)
         {
@@ -43,6 +47,7 @@ public class ResourcesSpawnScript : MonoBehaviour
     private void RandomRessources()
     {
         int index = Random.Range(0, RessourceSpawnable.Count);
+        currentRessourceID = index;
         ChangeObjectLocation(RessourceSpawnable[index], true);        
     }
 

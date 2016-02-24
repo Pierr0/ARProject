@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameRuler : MonoBehaviour {
 
-    private int idRessourceHolded;
+    static int idRessourceHolded = -1;
 
     [SerializeField]
     private PlayerHealth golem;
@@ -30,7 +30,56 @@ public class GameRuler : MonoBehaviour {
 	void Update () {
         if (clockActive)
             ClockAttacks();
-	}
+        CheckPlayerInput();
+    }
+
+    // Check player input
+    private void CheckPlayerInput()
+    {    
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray;
+            RaycastHit hitInfo;
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition); // Specify the ray to be casted from the position of the mouse click
+
+            // Raycast and verify that it collided
+            if (Physics.Raycast(ray, out hitInfo))
+            {
+                Debug.Log("mouse hit!");
+                // Select the object if it has the good Tag
+                if (hitInfo.collider.gameObject.tag == ("Marker"))
+                {
+                    idRessourceHolded = hitInfo.collider.gameObject.GetComponent<ResourcesSpawnScript>().CurrentRessourceID();
+                    Debug.Log("Marker = " + idRessourceHolded);
+                }
+                if (hitInfo.collider.gameObject.tag == ("Demon"))
+                {
+                    attack();
+
+                }
+                if (hitInfo.collider.gameObject.tag == ("Golem"))
+                {
+                    shielding();
+                }
+            }
+        }
+    }
+
+    public void attack()//si on clique sur le demon
+    {
+        if (idRessourceHolded != -1)
+        {
+            demon.damageDemon(idRessourceHolded);
+        }
+    }
+
+    public void shielding()//si on clique sur le golem
+    {
+        if (idRessourceHolded != -1)
+        {
+            golem.addShield(idRessourceHolded);
+        }
+    }
 
     public void gameStart()
     {

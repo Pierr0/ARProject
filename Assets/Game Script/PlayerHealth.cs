@@ -8,12 +8,8 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField]
     private GameRuler gameruler;
-
-<<<<<<< HEAD
-    private List<int> shields = new List<int>();
-=======
-    private List<Elements> shields;
->>>>>>> origin/master
+    
+    private List<Elements> shields = new List<Elements>();
 
     private Elements elementInfused;
 
@@ -38,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
         m_Dead = false;
 
         // Update the health slider's value and color.
-        //SetHealthUI();
+        SetHealthUI();
     }
     
     public void TakeDamage(int amount)
@@ -47,7 +43,7 @@ public class PlayerHealth : MonoBehaviour
         m_CurrentHealth -= amount;
 
         // Change the UI elements appropriately.
-        //SetHealthUI();
+        SetHealthUI();
 
         // If the current health is at or below zero and it has not yet been registered, call OnDeath.
         if (m_CurrentHealth <= 0f && !m_Dead)
@@ -73,23 +69,23 @@ public class PlayerHealth : MonoBehaviour
         
     }
 
-    public void damageDemon(Elements typeDamage)
+    public void damageDemon(int typeDamage)
     {
-        if (typeDamage == elementWheel(elementInfused))
+        if ((Elements)typeDamage == elementWheel(elementInfused))
         {
             TakeDamage(10);
         }
     }
 
-    public void addShield(Elements typeShield)
+    public void addShield(int typeShield)
     {
         if (shields.Count < 3)
         {
-            shields.Add(typeShield);
+            shields.Add((Elements)typeShield);
         }
         else
         {
-            shields[2] = typeShield;
+            shields[2] = (Elements)typeShield;
         }
     }
 
