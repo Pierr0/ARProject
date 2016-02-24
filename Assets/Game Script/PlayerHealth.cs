@@ -26,7 +26,27 @@ public class PlayerHealth : MonoBehaviour
     {
         return elementInfused;
     }
-    
+
+    public void setElementInfused(int elementId)
+    {
+        if (elementId == 0)
+        {
+            elementInfused = Elements.FIRE;
+        }
+        else if (elementId == 1)
+        {
+            elementInfused = Elements.EARTH;
+        }
+        else if (elementId == 2)
+        {
+            elementInfused = Elements.WATER;
+        }
+        else
+        {
+            elementInfused = Elements.FIRE;
+        }
+    }
+
     public void setEnable()
     {
         // When the player is enabled, reset the player's health and whether or not it's dead.
@@ -102,9 +122,9 @@ public class PlayerHealth : MonoBehaviour
     {
         // Set the flag so that this function is only called once.
         m_Dead = true;
-
         // Turn the player off.
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        gameruler.endGame();
     }
 
     public bool getDeath()
